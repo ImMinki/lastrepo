@@ -26,10 +26,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">로그아웃</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'list' %}">돌아가기</a> 
-                </li>
+                </li>                
                 <!--로그아웃 기능임-->
                 <form id="logout" method="POST" action="{% url 'logout' %}"> 
                     {% csrf_token %} <input type="hidden"/>
@@ -51,4 +48,5 @@
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit" value = "등록하기">
+    <a class="btn btn-primary" href="{% url 'list' %}">취소</a>
 </form>

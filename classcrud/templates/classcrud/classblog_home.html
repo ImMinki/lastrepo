@@ -6,7 +6,7 @@
 <html lang="ko">
     {% load static %}
     {% if error %}
-    {{ error }}
+    <div class="alert alert-danger" role="alert">{{ error }}</div>
     <br>
     {% endif %}
     <head>
@@ -17,22 +17,22 @@
     <body>
         <br>
         <h1>고려대학교 세종캠퍼스 강의평가 사이트</h1>
-        <h1>Korea University  course Evaluation </h1>
+        <h1>Korea University course Evaluation </h1>
         <img src="{% static 'korea.png' %}"   alt="mark">
         <br>
         <form method="POST" action="{% url 'welcome' %}">
             {% csrf_token %}
-            Username:
+            아이디:
             <br>
             <input name="username" type="text" value="">
             <br>
-            Password:
+            비밀번호:
             <br>
             <input name="password" type="password" value="">
             <br>
             <br>
-            <input class="btn btn-primary" type="submit" value="Login">
-            <a href="{% url 'signup' %}">sign up</a>
+            <input class="btn btn-primary" type="submit" value="로그인">
+            <a class="btn btn-primary" href="{% url 'signup' %}">회원가입</a>
         </form>        
     </body>
     </div>

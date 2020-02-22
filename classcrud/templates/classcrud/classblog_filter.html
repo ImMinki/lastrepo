@@ -28,7 +28,7 @@
                     <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">로그아웃</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'new' %}">평가하기</a>
+                  <a class="btn btn-primary" href="{% url 'new' %}">평가하기</a>
                 </li>
                 <!--로그아웃 기능임-->
                 <form id="logout" method="POST" action="{% url 'logout' %}"> 
@@ -40,8 +40,8 @@
         
           <div class="card w">
             <div class="card-body">
-              <h5 class="card-title">원하는 강의명 혹은 교수명을 입력하세요.</h5>
-              <p class="card-text">Please enter the desired lecture name or professor name.</p>
+              <h5 class="card-title">검색할 강의명 혹은 교수명을 입력하세요.</h5>
+              <p class="card-text">Please enter the lecture name or professor name or both in order to search.</p>
             </div>
           </div>
            <br>

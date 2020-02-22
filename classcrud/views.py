@@ -24,7 +24,7 @@ def welcome(request):
             auth.login(request, user)
             return redirect('list')
         else:
-            return render(request, 'classcrud/classblog_home.html', {'error': 'username or password is incorrect.'})
+            return render(request, 'classcrud/classblog_home.html', {'error': '아이디나 비밀번호가 일치하지 않습니다.'})
     else:
         return render(request, 'classcrud/classblog_home.html')
 
@@ -43,14 +43,14 @@ def signup(request):
         if request.POST['password1'] == request.POST['password2']:
             try:
                 user = User.objects.get(username=request.POST['username'])
-                return render(request, 'classcrud/classblog_signup.html', {'error': 'Username has already been taken'})
+                return render(request, 'classcrud/classblog_signup.html', {'error': '이미 있는 아이디입니다.'})
             except User.DoesNotExist:
                 user = User.objects.create_user(
                     request.POST['username'], password=request.POST['password1'])
                 auth.login(request, user)
                 return redirect('welcome')
         else:
-            return render(request, 'classcrud/classblog_signup.html', {'error': 'Passwords must match'})
+            return render(request, 'classcrud/classblog_signup.html', {'error': '비밀번호가 일치하지 않습니다.'})
     else:
         # User wants to enter info
         return render(request, 'classcrud/classblog_signup.html')

@@ -11,7 +11,7 @@
     <div class="text-center">
     <body>
         {% if error %}
-        {{ error }}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
         <br>
         {% endif %}
         <br><br>
@@ -19,15 +19,15 @@
         <h3>아이디와 비밀번호를 작성해주세요.</h3><br>
         <form method="POST" action="{% url 'signup' %}">
             {% csrf_token %}
-            Username:
+            아이디:
             <br>
             <input name="username" type="text" value="">
             <br>
-            Password:
+            비밀번호:
             <br>
             <input name="password1" type="password" value="">
             <br>
-            Confirm Password:
+            비밀번호 확인:
             <br>
             <input name="password2" type="password" value="">
             <br>
